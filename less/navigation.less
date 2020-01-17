@@ -1,0 +1,64 @@
+/* Navigation */
+nav {
+	padding: 1rem;
+	font-size: 1.3rem;
+}
+
+nav .nav-link {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #333534;
+	font-weight: bold;
+	letter-spacing: 3px;
+	margin-left: 1.3rem;
+	padding: 1rem 0px;
+	display: inline-block;
+	position: relative;
+}
+
+nav .nav-link::before {
+	transition: 300ms;
+	height: 5px;
+	content: "";
+	position: absolute;
+	border-radius: 5px;
+	background: rgb(255, 89, 100);
+	background: -moz-linear-gradient(
+		90deg,
+		rgba(255, 89, 100, 1) 0%,
+		rgba(255, 128, 89, 1) 100%,
+		rgba(255, 122, 91, 1) 100%,
+		rgba(255, 89, 100, 1) 100%
+	);
+	background: -webkit-linear-gradient(
+		90deg,
+		rgba(255, 89, 100, 1) 0%,
+		rgba(255, 128, 89, 1) 100%,
+		rgba(255, 122, 91, 1) 100%,
+		rgba(255, 89, 100, 1) 100%
+	);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 89, 100, 1) 0%,
+		rgba(255, 128, 89, 1) 100%,
+		rgba(255, 122, 91, 1) 100%,
+		rgba(255, 89, 100, 1) 100%
+	);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff5964",endColorstr="#ff5964",GradientType=1);
+}
+
+nav .nav-link-hover-effect::before {
+	width: 0%;
+	bottom: 10px;
+	right: 0;
+}
+
+nav .nav-link-hover-effect:hover::before {
+	width: 100%;
+	left: 0;
+}
+
+nav .active::before {
+	bottom: 10px !important;
+	width: 100% !important;
+}
