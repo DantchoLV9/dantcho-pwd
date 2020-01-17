@@ -1,0 +1,85 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Fonts & White Theme Colors */
+body {
+    background-color: #f3f5f9;
+    color: #333534;
+    font-family: "Nunito", sans-serif;
+}
+
+/* Navigation Bar */
+nav {
+    position: relative;
+    padding: 1rem 1rem;
+    font-size: 1.3rem;
+    align-items: center;
+    height: 8vh;
+    z-index: 1;
+}
+
+nav > div {
+    display: inline;
+}
+
+nav > div > .nav-link {
+    border-bottom: 3px solid transparent;
+    text-transform: uppercase;
+}
+
+nav > div .nav-link:hover {
+    transition-duration: 0.3s;
+    border-bottom: 3px solid #ff5964;
+}
+
+nav > div > .nav-element {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Links */
+a {
+    color: #333534;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+/* Mobile Navigation Bar - Burger Button */
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #333534;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Navigation Bar - Burger Button Toggle Animation */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile Navigation Bar - Active */
+.nav-active {
+    transform: translateX(0%)!important;
+}
