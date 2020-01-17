@@ -13,73 +13,48 @@ body {
     font-family: "Nunito", sans-serif;
 }
 
-/* Navigation Bar */
+/* Navigation */
 nav {
-    position: relative;
-    padding: 1rem 1rem;
+    padding: 1rem;
     font-size: 1.3rem;
-    align-items: center;
-    height: 8vh;
-    z-index: 1;
 }
 
-nav > div {
-    display: inline;
-}
-
-nav > div > .nav-link {
-    border-bottom: 3px solid transparent;
-    text-transform: uppercase;
-}
-
-nav > div .nav-link:hover {
-    transition-duration: 0.3s;
-    border-bottom: 3px solid #ff5964;
-}
-
-nav > div > .nav-element {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-/* Links */
-a {
-    color: #333534;
-    cursor: pointer;
+nav .nav-link {
     text-decoration: none;
-    background-color: transparent;
+    text-transform: uppercase;
+    color: #333534;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-left: 1.2rem;
+    padding: 0.7rem 0px;
+    display: inline-block;
+    position: relative;
 }
 
-/* Mobile Navigation Bar - Burger Button */
-.burger {
-    display: none;
-}
-
-.burger div {
-    width: 25px;
+nav .nav-link::before {
+    transition: 300ms;
     height: 3px;
-    margin: 5px;
-    background-color: #333534;
-    transition: all 0.3s ease;
+    content: "";
+    position: absolute;
+    background: rgb(255,89,100);
+    background: -moz-linear-gradient(90deg, rgba(255,89,100,1) 0%, rgba(255,128,89,1) 100%, rgba(255,122,91,1) 100%, rgba(255,89,100,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255,89,100,1) 0%, rgba(255,128,89,1) 100%, rgba(255,122,91,1) 100%, rgba(255,89,100,1) 100%);
+    background: linear-gradient(90deg, rgba(255,89,100,1) 0%, rgba(255,128,89,1) 100%, rgba(255,122,91,1) 100%, rgba(255,89,100,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff5964",endColorstr="#ff5964",GradientType=1);
+}
+  
+nav .nav-link-hover-effect::before {
+    width: 0%;
+    bottom: 10px;
+    right: 0;
+}
+  
+nav .nav-link-hover-effect:hover::before {
+    width: 100%;
+    left: 0;
 }
 
-/* Mobile Navigation Bar - Burger Button Toggle Animation */
-.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.toggle .line2 {
-    opacity: 0;
-}
-
-.toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Mobile Navigation Bar - Active */
-.nav-active {
-    transform: translateX(0%)!important;
+nav .active::before {
+    bottom: 10px !important;
+    width: 100% !important;
 }
