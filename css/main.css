@@ -25,17 +25,18 @@ nav .nav-link {
     color: #333534;
     font-weight: bold;
     letter-spacing: 3px;
-    margin-left: 1.2rem;
-    padding: 0.7rem 0px;
+    margin-left: 1.3rem;
+    padding: 1rem 0px;
     display: inline-block;
     position: relative;
 }
 
 nav .nav-link::before {
     transition: 300ms;
-    height: 3px;
+    height: 5px;
     content: "";
     position: absolute;
+    border-radius: 5px;
     background: rgb(255,89,100);
     background: -moz-linear-gradient(90deg, rgba(255,89,100,1) 0%, rgba(255,128,89,1) 100%, rgba(255,122,91,1) 100%, rgba(255,89,100,1) 100%);
     background: -webkit-linear-gradient(90deg, rgba(255,89,100,1) 0%, rgba(255,128,89,1) 100%, rgba(255,122,91,1) 100%, rgba(255,89,100,1) 100%);
