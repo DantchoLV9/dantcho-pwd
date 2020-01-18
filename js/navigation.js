@@ -1,35 +1,48 @@
 const navSlide = () => {
-    
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const pageContent = document.querySelector('.grid-container');
+	const burger = document.querySelector(".burger");
+	const navigationElementHeight = document.querySelector("#navigation-bar")
+		.offsetHeight;
+	const nav = document.querySelector(".nav-links");
+	const navLinks = document.querySelectorAll(".nav-links a");
+	const pageContent = document.querySelector(".content");
 
-    burger.addEventListener('click', ()=> {
+	//console.log(nav);
 
-        nav.classList.toggle('nav-active');
+	window.addEventListener("resize", () => {
+		if (window.innerWidth > 576) {
+			nav.classList.remove("nav-active");
+			pageContent.style.animation = "";
+			navLinks.forEach((link, index) => {
+				if (link.style.animation) {
+					link.style.animation = "";
+				}
+			});
+		}
+	});
 
-        navLinks.forEach((link, index) => {
+	burger.addEventListener("click", () => {
+		nav.classList.toggle("nav-active");
+		nav.style.top = `${navigationElementHeight}px`;
 
-            if (link.style.animation) {
-                link.style.animation = '';
-                if (!Object.is(pageContent, null)) {
-                    pageContent.style.animation = '';
-                }
-            }
-            else {
-                link.style.animation = `navLinkFadeIn 0.5s ease forwards ${index / 7 + 0.5}s`;
-                if (!Object.is(pageContent, null)) {
-                    pageContent.style.animation = 'movePageContentDown 0.3s ease forwards';
-                }
-            }
-    
-        });
+		navLinks.forEach((link, index) => {
+			if (link.style.animation) {
+				link.style.animation = "";
+				if (!Object.is(pageContent, null)) {
+					pageContent.style.animation =
+						"movePageContentLeft 0.5s ease forwards";
+				}
+			} else {
+				link.style.animation = `navLinkFadeIn 0.3s ease forwards ${index / 7 +
+					0.5}s`;
+				if (!Object.is(pageContent, null)) {
+					pageContent.style.animation =
+						"movePageContentRight 0.5s ease forwards";
+				}
+			}
+		});
 
-        burger.classList.toggle('toggle');
-
-    });
-
-}
+		burger.classList.toggle("toggle");
+	});
+};
 
 navSlide();
