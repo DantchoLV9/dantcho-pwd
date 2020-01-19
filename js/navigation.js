@@ -6,8 +6,6 @@ const navSlide = () => {
 	const navLinks = document.querySelectorAll(".nav-links a");
 	const pageContent = document.querySelector(".content");
 
-	//console.log(nav);
-
 	window.addEventListener("resize", () => {
 		if (window.innerWidth > 576) {
 			nav.classList.remove("nav-active");
