@@ -9,6 +9,7 @@ const navSlide = () => {
 	window.addEventListener("resize", () => {
 		if (window.innerWidth > 576) {
 			nav.classList.remove("nav-active");
+			burger.classList.remove("toggle");
 			pageContent.style.animation = "";
 			navLinks.forEach((link, index) => {
 				if (link.style.animation) {
