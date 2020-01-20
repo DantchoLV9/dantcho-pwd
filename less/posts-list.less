@@ -1,0 +1,49 @@
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 1rem 3rem 0 3rem;
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	.post-item {
+		padding: 0.5rem 1rem;
+		margin: 0.5rem 0;
+		border-radius: 5px;
+		transition: 300ms;
+		cursor: pointer;
+		display: grid;
+		grid-column-gap: 10px;
+		grid-template-columns: 1fr auto;
+		grid-template-areas: "post-title read-time";
+
+		.post-title {
+			grid-area: post-title;
+		}
+
+		.read-time {
+			grid-area: read-time;
+		}
+
+		h2 {
+			font-size: 1.2rem;
+			color: lighten(@main-black, 20%);
+		}
+
+		span {
+			margin-top: auto;
+			margin-bottom: auto;
+			color: lighten(@main-black, 30%);
+		}
+	}
+
+	.post-item:hover {
+		box-shadow: -5px -5px 15px 0 rgba(255, 255, 255, 1),
+			5px 5px 15px 0 rgba(0, 0, 0, 0.11);
+
+		h2 {
+			color: @main-black;
+		}
+	}
+}
