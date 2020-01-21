@@ -102,10 +102,11 @@ main {
 
 	.active {
 		grid-template-columns: 1fr auto;
-		grid-template-rows: auto auto auto;
+		grid-template-rows: auto auto auto auto;
 		grid-template-areas:
 			"post-title post-link"
-			"post-desc post-meta"
+			"post-meta post-meta"
+			"post-desc post-desc"
 			"post-badges post-badges";
 		grid-row-gap: 10px;
 
@@ -127,21 +128,21 @@ main {
 		.post-meta {
 			display: grid;
 			grid-area: post-meta;
-			grid-template-rows: auto auto;
-			grid-template-areas:
-				"read-time"
-				"pub-date";
-			text-align: right;
+			grid-template-columns: auto auto;
+			grid-template-rows: auto;
+			grid-template-areas: "pub-date read-time";
 		}
 
 		.read-time {
 			grid-area: read-time;
 			display: inline;
+			text-align: right;
 		}
 
 		.pub-date {
 			grid-area: pub-date;
 			display: inline;
+			text-align: left;
 		}
 
 		.post-badges {
