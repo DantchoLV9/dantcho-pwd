@@ -3,7 +3,12 @@ const elementCollapse = () => {
 
 	posts.forEach(post => {
 		post.firstElementChild.addEventListener("click", () => {
-			console.log(post);
+			currentPostElement = post;
+			posts.forEach(notCurentPostElement => {
+				if (notCurentPostElement !== currentPostElement) {
+					notCurentPostElement.classList.remove("active");
+				}
+			});
 			post.classList.toggle("active");
 		});
 	});
