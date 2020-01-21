@@ -4,7 +4,20 @@ main {
 	padding: 1rem 3rem 0 3rem;
 
 	h1 {
+		display: grid;
+		align-items: center;
+		grid-gap: 20px;
 		font-size: 2rem;
+		padding: 0 1rem;
+		text-align: center;
+		grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
+	}
+
+	h1::before,
+	h1:after {
+		content: "";
+		border-top: 3px solid lighten(@main-black, 60%);
+		border-radius: 5px;
 	}
 
 	.post-item {
@@ -12,26 +25,61 @@ main {
 		margin: 0.5rem 0;
 		border-radius: 5px;
 		transition: 300ms;
-		cursor: pointer;
 		display: grid;
 		grid-column-gap: 10px;
 		grid-template-columns: 1fr auto;
-		grid-template-areas: "post-title read-time";
+		grid-template-areas: "post-title post-link";
 
 		.post-title {
 			grid-area: post-title;
+			font-size: 1.5rem;
+		}
+
+		.post-link {
+			grid-area: post-link;
+			font-size: 1.2rem;
+			text-decoration: none;
+		}
+
+		.post-link:hover {
+			text-decoration: underline;
+		}
+
+		.post-desc {
+			display: none;
+			color: lighten(@main-black, 10%);
+			font-size: 1.2rem;
+		}
+
+		.post-meta {
+			display: none;
+			font-size: 1.2rem;
+			color: lighten(@main-black, 20%);
 		}
 
 		.read-time {
-			grid-area: read-time;
+			display: none;
+			margin-top: auto;
+			margin-bottom: 0;
+		}
+
+		.pub-date {
+			display: none;
+			margin-top: 0;
+			margin-bottom: auto;
+		}
+
+		.post-badges {
+			display: none;
 		}
 
 		h2 {
 			font-size: 1.2rem;
 			color: lighten(@main-black, 20%);
+			cursor: pointer;
 		}
 
-		span {
+		a {
 			margin-top: auto;
 			margin-bottom: auto;
 			color: lighten(@main-black, 30%);
@@ -41,9 +89,65 @@ main {
 	.post-item:hover {
 		box-shadow: -5px -5px 15px 0 rgba(255, 255, 255, 1),
 			5px 5px 15px 0 rgba(0, 0, 0, 0.11);
+		h2 {
+			color: @main-black;
+			a {
+				display: inline;
+			}
+			a:hover {
+				color: @main-black;
+			}
+		}
+	}
+
+	.active {
+		grid-template-columns: 1fr auto;
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas:
+			"post-title post-link"
+			"post-meta post-meta"
+			"post-desc post-desc"
+			"post-badges post-badges";
+		grid-row-gap: 10px;
 
 		h2 {
 			color: @main-black;
+		}
+
+		.post-link {
+			grid-area: post-link;
+			display: inline;
+			text-align: right;
+		}
+
+		.post-desc {
+			grid-area: post-desc;
+			display: inline;
+		}
+
+		.post-meta {
+			display: grid;
+			grid-area: post-meta;
+			grid-template-columns: auto auto;
+			grid-template-rows: auto;
+			grid-template-areas: "pub-date read-time";
+		}
+
+		.read-time {
+			grid-area: read-time;
+			display: inline;
+			text-align: right;
+		}
+
+		.pub-date {
+			grid-area: pub-date;
+			display: inline;
+			text-align: left;
+		}
+
+		.post-badges {
+			grid-area: post-badges;
+			display: inline-block;
 		}
 	}
 }
