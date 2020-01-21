@@ -3,7 +3,7 @@ main {
 	margin: 0 auto;
 	padding: 1rem 3rem 0 3rem;
 
-	h1 {
+	.blog-heading {
 		display: grid;
 		align-items: center;
 		grid-gap: 20px;
@@ -13,8 +13,8 @@ main {
 		grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
 	}
 
-	h1::before,
-	h1:after {
+	.blog-heading::before,
+	.blog-heading:after {
 		content: "";
 		border-top: 3px solid lighten(@main-black, 60%);
 		border-radius: 5px;
