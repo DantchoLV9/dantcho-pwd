@@ -4,13 +4,7 @@ main {
 	}
 
 	article {
-		display: grid;
-		grid-template-columns: auto;
-		grid-template-rows: auto auto auto;
-		grid-template-areas:
-			"post-title"
-			"post-meta"
-			"post-content";
+		margin-bottom: 5rem;
 
 		h2 {
 			position: relative;
@@ -135,6 +129,34 @@ main {
 			word-wrap: break-word;
 		}
 
+		pre,
+		code {
+			border-radius: 5px;
+		}
+
+		code {
+			padding: 1.5rem !important;
+		}
+
+		pre {
+			code::selection,
+			span::selection {
+				background: darken(@main-white, 30%);
+			}
+
+			code::-moz-selection,
+			span::-moz-selection {
+				background: darken(@main-white, 30%);
+			}
+		}
+
+		pre::selection {
+			background: darken(@main-white, 30%);
+		}
+		pre::-moz-selection {
+			background: darken(@main-white, 30%);
+		}
+
 		.article-img {
 			max-width: 800px;
 			width: 100%;
@@ -143,13 +165,11 @@ main {
 		}
 
 		.post-title {
-			grid-area: post-title;
 			margin-bottom: 0.5rem;
 		}
 
 		.post-meta {
 			display: grid;
-			grid-area: post-meta;
 			grid-template-columns: auto auto;
 			grid-template-rows: auto auto auto auto;
 			margin-bottom: 2rem;
@@ -195,8 +215,6 @@ main {
 		}
 
 		.post-content {
-			grid-area: post-content;
-
 			hr {
 				grid-area: separator-line;
 				height: 3px;

@@ -11,6 +11,7 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/atom-one-dark.css" />
 	</head>
 	<body>
 		<nav id="navigation-bar">
@@ -121,9 +122,33 @@
 						</tbody>
 					</table>
 					<h3>Code</h3>
+					<pre>
+<code class="lang-js">const username = ''
+const password = ''
+							
+const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64')
+							
+const url = 'https://...'
+							
+axios.post(url, {
+  headers: {
+	'Authorization': `Basic ${token}`
+  }
+})</code>
+					</pre>
+					<h3>Blockquote</h3>
+					<blockquote cite="https://www.huxley.net/bnw/four.html">
+						<p>
+							Words can be like X-rays, if you use them properly—they’ll go
+							through anything. You read and you’re pierced.
+						</p>
+						<footer>— Aldous Huxley, <cite>Brave New World</cite></footer>
+					</blockquote>
 				</div>
 			</article>
 		</main>
 		<script src="js/navigation.js"></script>
+		<script src="js/highlight.pack.js"></script>
+		<script src="js/hlConf.js"></script>
 	</body>
 </html>
