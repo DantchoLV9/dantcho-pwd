@@ -4,7 +4,7 @@ This is the second version of the initial design for my personal website. This v
 
 ---
 
-To compile CSS:
+## To compile CSS:
 
 Run: `npm install`
 
@@ -12,7 +12,7 @@ Then use the "Run Task" in VS Code to run "gulp: default". This will compile the
 
 Alternativly compile `less\style.less` into `css\style.css` manually.
 
-Technologies Used:
+## Technologies Used:
 
 [Highlight.js](https://github.com/highlightjs/highlight.js) - For syntax highlights
 
