@@ -40,7 +40,4 @@ gulp.task("build-js", function(cb) {
 	cb();
 });
 
-gulp.task("build", function(cb) {
-	gulp.series("build-css", "build-js");
-	cb();
-});
+gulp.task("build", gulp.parallel("build-css", "build-js"));
