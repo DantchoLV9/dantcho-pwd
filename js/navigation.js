@@ -11,7 +11,7 @@ const navSlide = () => {
 			nav.classList.remove("nav-active");
 			burger.classList.remove("toggle");
 			pageContent.style.animation = "";
-			navLinks.forEach((link, index) => {
+			navLinks.forEach(link => {
 				if (link.style.animation) {
 					link.style.animation = "";
 				}
