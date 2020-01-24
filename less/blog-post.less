@@ -76,6 +76,7 @@ main {
 
 		ul,
 		ol {
+			margin-bottom: 1.5rem;
 			li {
 				margin-left: 2rem;
 				list-style: none;
@@ -109,8 +110,39 @@ main {
 			}
 		}
 
-		.overflow-x-auto {
+		img {
+			max-width: 800px;
+			width: 100%;
+			height: auto;
+			border-radius: 5px;
+			margin-bottom: 1.5rem;
+		}
+
+		blockquote {
+			background: lighten(@main-black, 90%);
+			border-left: 10px solid lighten(@main-black, 60%);
+			border-radius: 5px;
+			margin: 1.5em 0;
+			padding: 0.5em 10px;
+			quotes: "\201C""\201D""\2018""\2019";
+		}
+
+		blockquote:before {
+			color: lighten(@main-black, 60%);
+			content: open-quote;
+			font-size: 4em;
+			line-height: 0.1em;
+			margin-right: 0.25em;
+			vertical-align: -0.4em;
+		}
+
+		blockquote p {
+			display: inline;
+		}
+
+		.table {
 			overflow-x: auto;
+			margin-bottom: 1.5rem;
 		}
 
 		table {
@@ -118,15 +150,23 @@ main {
 			width: 100%;
 		}
 
-		table,
 		th,
 		td {
-			border-bottom: 2px solid lighten(@main-black, 70%);
 			text-align: left;
+			padding: 1.5rem;
 		}
 
-		th,
-		td {
+		th {
+			border-bottom: 2px solid lighten(@main-black, 60%);
+		}
+
+		tr {
+			border-bottom: 2px solid lighten(@main-black, 70%);
+		}
+
+		tr:last-child {
+			border-bottom: none;
+			text-align: left;
 			padding: 1.5rem;
 		}
 
@@ -156,13 +196,6 @@ main {
 		}
 		pre::-moz-selection {
 			background: darken(@main-white, 30%);
-		}
-
-		.article-img {
-			max-width: 800px;
-			width: 100%;
-			height: auto;
-			border-radius: 5px;
 		}
 
 		.post-title {
@@ -221,7 +254,7 @@ main {
 				height: 3px;
 				background-color: lighten(@main-black, 70%);
 				border-radius: 5px;
-				margin-top: 2rem;
+				margin: 2rem 0;
 			}
 		}
 	}

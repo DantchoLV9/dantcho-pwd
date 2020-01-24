@@ -4,7 +4,33 @@
 		{
 			"type": "gulp",
 			"task": "default",
-			"problemMatcher": ["$gulp-tsc"]
+			"problemMatcher": [
+				"$gulp-tsc"
+			]
+		},
+		{
+			"type": "gulp",
+			"task": "build",
+			"problemMatcher": [
+				"$gulp-tsc"
+			],
+			"group": "build"
+		},
+		{
+			"type": "gulp",
+			"task": "build-css",
+			"problemMatcher": [
+				"$gulp-tsc"
+			],
+			"group": "build"
+		},
+		{
+			"type": "gulp",
+			"task": "build-js",
+			"problemMatcher": [
+				"$gulp-tsc"
+			],
+			"group": "build"
 		}
 	]
 }
