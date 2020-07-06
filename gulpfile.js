@@ -3,27 +3,29 @@ var less = require("gulp-less");
 var cleanCSS = require("gulp-clean-css");
 var minify = require("gulp-minify");
 
-gulp.task("less", function(cb) {
-	gulp
-		.src("./less/style.less")
-		.pipe(less())
-		.pipe(gulp.dest("./css"));
+gulp.task("less", function (cb) {
+	gulp.src("./less/style.less").pipe(less()).pipe(gulp.dest("./css"));
 	cb();
 });
 
 gulp.task(
 	"default",
-	gulp.series("less", function(cb) {
+	gulp.series("less", function (cb) {
 		gulp.watch("./less/*.less", gulp.series("less"));
 		cb();
 	})
 );
 
-gulp.task("build-css", function(cb) {
+gulp.task("compile-css", function (cb) {
+	gulp.src("./css/*.css").pipe(gulp.dest("./output/css"));
+	cb();
+});
+
+gulp.task("build-css", function (cb) {
 	gulp
 		.src("./css/*.css")
 		.pipe(
-			cleanCSS({ debug: true, compatibility: "ie8" }, details => {
+			cleanCSS({ debug: true, compatibility: "ie8" }, (details) => {
 				console.log(`${details.name}: ${details.stats.originalSize}`);
 				console.log(`${details.name}: ${details.stats.minifiedSize}`);
 			})
@@ -32,11 +34,8 @@ gulp.task("build-css", function(cb) {
 	cb();
 });
 
-gulp.task("build-js", function(cb) {
-	gulp
-		.src("./js/*.js")
-		.pipe(minify())
-		.pipe(gulp.dest("./output/js"));
+gulp.task("build-js", function (cb) {
+	gulp.src("./js/*.js").pipe(minify()).pipe(gulp.dest("./output/js"));
 	cb();
 });
 
