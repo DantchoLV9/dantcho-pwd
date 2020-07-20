@@ -1,32 +1,20 @@
-// Reset Browser Specific Styling
+// Reset Browser Styling
 * {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	box-sizing: border-box;
 }
-
+// Selection Styling
 *::selection {
 	background: lighten(@main-blue, 35%);
 }
-
 *::-moz-selection {
 	background: lighten(@main-blue, 35%);
 }
-
-// Focused Input Fields Styling
-input[type="search"]:focus {
-	outline: none;
-	border: 1px solid @main-black;
-}
-
-// Font & Default Colors
+// Fonts & Colours
 body {
 	background-color: @main-white;
 	color: @main-black;
 	font-family: "Nunito", sans-serif;
-
-	a {
-		color: @main-black;
-	}
 }
