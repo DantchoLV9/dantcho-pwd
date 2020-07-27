@@ -1,7 +1,8 @@
 nav {
 	padding: 1rem;
 	font-size: 1.3rem;
-	a {
+	// Nav Link
+	.nav-link {
 		color: @main-black;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -12,7 +13,13 @@ nav {
 		display: inline-block;
 		position: relative;
 	}
-	a::before {
+	// Nav Link Float Right
+	.float-right {
+		float: right;
+		margin-right: 1.3rem;
+	}
+	// Nav Link Underline
+	.nav-link::before {
 		transition: 300ms;
 		height: 5px;
 		content: "";
@@ -39,8 +46,104 @@ nav {
 		);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff5959",endColorstr="#ff9659",GradientType=1);
 	}
-	a:hover::before {
+	// Nav Link Underline Hover
+	.nav-link:hover::before {
 		left: 0;
 		width: 100%;
+	}
+	// Nav Link Underline Active
+	.active::before {
+		bottom: 10px;
+		width: 100%;
+	}
+	// Nav Toggler
+	.nav-toggler {
+		display: none;
+		cursor: pointer;
+		background: none;
+		outline: none;
+		div {
+			width: 25px;
+			height: 3px;
+			margin: 5px;
+			border-radius: 5px;
+			background-color: @main-black;
+			transition: all 0.3s ease;
+		}
+	}
+	// Nav Toggler Animation
+	.toggle {
+		div:first-of-type {
+			transform: rotate(-45deg) translate(-5px, 6px);
+		}
+		div:nth-child(2) {
+			opacity: 0;
+		}
+		div:last-of-type {
+			transform: rotate(45deg) translate(-5px, -6px);
+		}
+	}
+	// Mobile Breakpoint
+	@media screen and (max-width: 576px) {
+		// Hide Links
+		.nav-link {
+			opacity: 0;
+			margin: 0;
+		}
+		// Show Nav Togger
+		.nav-toggler {
+			display: inline-block;
+		}
+		// Mobile Nav Links
+		.nav-links {
+			position: absolute;
+			right: 0;
+			top: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			transform: translateX(-100%);
+			transition: transform 0.5s ease-in;
+			z-index: 1;
+			.float-right {
+				margin-right: 0;
+			}
+		}
+		// Move Nav When Toggled
+		.nav-toggled {
+			transform: translateX(0) !important;
+		}
+	}
+}
+// Mobile Navigation Bar Links - Fade-In Animation
+@keyframes navLinkFadeIn {
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+// Page Content - Slide Out Animation
+@keyframes movePageContentRight {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(100%);
+	}
+}
+
+// Page Content - Slide In Animation
+@keyframes movePageContentLeft {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0);
 	}
 }

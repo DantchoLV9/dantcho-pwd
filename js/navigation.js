@@ -1,47 +1,40 @@
-const navSlide = () => {
-	const burger = document.querySelector(".burger");
-	const navigationElementHeight = document.querySelector("#navigation-bar")
-		.offsetHeight;
-	const nav = document.querySelector(".nav-links");
-	const navLinks = document.querySelectorAll(".nav-links a");
-	const pageContent = document.querySelector(".content");
+const toggleNav = () => {
+	const navToggler = document.querySelector(".nav-toggler");
+	const navHeight = document.querySelector("nav").offsetHeight;
+	const navLinksContainer = document.querySelector(".nav-links");
+	const navLinks = document.querySelectorAll(".nav-link");
+	const mainContainer = document.querySelector("main");
 
-	window.addEventListener("resize", () => {
-		if (window.innerWidth > 576) {
-			nav.classList.remove("nav-active");
-			burger.classList.remove("toggle");
-			pageContent.style.animation = "";
-			navLinks.forEach(link => {
-				if (link.style.animation) {
-					link.style.animation = "";
-				}
-			});
-		}
-	});
-
-	burger.addEventListener("click", () => {
-		nav.classList.toggle("nav-active");
-		nav.style.top = `${navigationElementHeight}px`;
-
-		navLinks.forEach((link, index) => {
-			if (link.style.animation) {
-				link.style.animation = "";
-				if (!Object.is(pageContent, null)) {
-					pageContent.style.animation =
+	navToggler.addEventListener("click", () => {
+		navLinksContainer.classList.toggle("nav-toggled");
+		navLinksContainer.style.top = `${navHeight}px`;
+		navToggler.classList.toggle("toggle");
+		navLinks.forEach((navLink, index) => {
+			if (navLink.style.animation) {
+				navLink.style.animation = "";
+				if (!Object.is(mainContainer, null)) {
+					mainContainer.style.animation =
 						"movePageContentLeft 0.5s ease forwards";
 				}
 			} else {
-				link.style.animation = `navLinkFadeIn 0.3s ease forwards ${index / 7 +
-					0.5}s`;
-				if (!Object.is(pageContent, null)) {
-					pageContent.style.animation =
+				navLink.style.animation = `navLinkFadeIn 0.3s ease forwards ${
+					index / 7 + 0.5
+				}s`;
+				if (!Object.is(mainContainer, null)) {
+					mainContainer.style.animation =
 						"movePageContentRight 0.5s ease forwards";
 				}
 			}
 		});
+	});
 
-		burger.classList.toggle("toggle");
+	window.addEventListener("resize", () => {
+		if (window.innerWidth > 576) {
+			if (navLinksContainer.classList.contains("nav-toggled")) {
+				navToggler.click();
+			}
+		}
 	});
 };
 
-navSlide();
+toggleNav();
