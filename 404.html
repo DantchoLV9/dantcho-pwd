@@ -3,9 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-		<title>Dantcho | Blog</title>
+		<title>Document</title>
 		<link
 			href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700&display=swap"
 			rel="stylesheet"
@@ -13,46 +11,27 @@
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		<nav id="navigation-bar">
+		<nav>
 			<div class="nav-links">
-				<a class="nav-link nav-element nav-link-hover-effect" href="#">
-					Home
-				</a>
-				<a
-					class="nav-link nav-element nav-link-hover-effect active"
-					href="index.html"
-				>
-					Blog
-				</a>
-				<a class="nav-link nav-element nav-link-hover-effect" href="#">
-					Projects
-				</a>
-				<a class="nav-link nav-element nav-link-hover-effect" href="#">
-					About
-				</a>
-				<a
-					id="search-link"
-					class="nav-link nav-element nav-link-hover-effect"
-					href="search.html"
-				>
-					Search
-				</a>
+				<a class="nav-link" href="#">Home</a>
+				<a class="nav-link" href="index.html">Blog</a>
+				<a class="nav-link" href="#">Projects</a>
+				<a class="nav-link float-right" href="#">Search</a>
 			</div>
-			<button class="burger">
-				<div class="line1"></div>
-				<div class="line2"></div>
-				<div class="line3"></div>
+			<button class="nav-toggler">
+				<div></div>
+				<div></div>
+				<div></div>
 			</button>
 		</nav>
-		<main class="content">
-			<div class="page-center">
+		<main>
+			<div class="not-found">
 				<h1>Oops</h1>
 				<img src="images/not-found.svg" alt="404" />
 				<h2>Page not found</h2>
 				<a href="#">Go back</a>
 			</div>
 		</main>
-		<script src="js/navigation.js"></script>
-		<script src="js/postListElement.js"></script>
 	</body>
+	<script src="js/navigation.js"></script>
 </html>
