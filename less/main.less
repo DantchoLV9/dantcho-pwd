@@ -22,6 +22,18 @@ body {
 		max-width: 800px;
 		margin: 0 auto;
 		padding: 1rem 3rem 0 3rem;
+		// Link styling in the main page component
+		a:not(.post-item) {
+			text-decoration: none;
+			font-weight: bold;
+			color: @main-blue;
+			border-bottom: 0px solid lighten(@main-blue, 30%);
+		}
+		// Hover effect for the links in the main page component
+		a:not(.post-item):hover {
+			background-color: lighten(@main-blue, 35%);
+			border-bottom: 2px solid lighten(@main-blue, 10%);
+		}
 	}
 }
 // Page Heading
