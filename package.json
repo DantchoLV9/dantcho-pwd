@@ -1,0 +1,27 @@
+{
+  "name": "dantcho-pwd",
+  "version": "1.0.0",
+  "description": "This is the second version of the initial design for my personal website. This version only contains pages for the blog and projects.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-less": "^5.0.0",
+    "gulp-sass": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DantchoLV9/dantcho-pwd.git"
+  },
+  "author": "Yordan Hristov (Dantcho)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DantchoLV9/dantcho-pwd/issues"
+  },
+  "homepage": "https://github.com/DantchoLV9/dantcho-pwd#readme"
+}
